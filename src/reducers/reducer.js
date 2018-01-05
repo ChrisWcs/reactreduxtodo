@@ -6,7 +6,7 @@ const reducer = (state = initialState(), action) => {
         case ADD_TODO:
             return {
                 todos: [...state.todos, {
-                    name: action.name,
+                    name: state.inputValue,
                     toggle: false,
                 }],
                 inputValue: "",
