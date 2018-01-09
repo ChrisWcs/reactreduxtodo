@@ -4,10 +4,12 @@ import { Provider } from 'react-redux';
 
 import reducer from '../reducers/reducer';
 
+import ConInput from '../containers/ConInput';
+
 const App = () => (
     <Provider store={createStore(reducer)}>
         <div>
-            test
+            <ConInput />
         </div>
     </Provider>
 );
