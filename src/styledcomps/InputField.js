@@ -6,6 +6,7 @@ const InputField = styled.input`
     background: white;
     border: solid 1px black;
     letter-spacing: 1px;
+    padding-left: 7px;
 `;
 
 export default InputField;
