@@ -7,7 +7,7 @@ import FlexCol from '../styledcomps/FlexCol';
 
 const Todos = ({ list, deleteFunc, toggleFunc}) => (
     <FlexCol>
-        { list.map( (x, i) => <Todo key={i} todo={x} deleteFunc={deleteFunc(i)} toggleFunc={toggleFunc(i)}/>) }
+        { list.map( (x, i) => <Todo key={i} todo={x.name} deleteFunc={deleteFunc(i)} toggleFunc={toggleFunc(i)}/>) }
     </FlexCol>
 );
 

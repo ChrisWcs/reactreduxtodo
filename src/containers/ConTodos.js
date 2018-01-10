@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 
+import { createDeleteTodo, createToggleTodo } from '../actions/actionCreators';
+
 import Todos from '../components/Todos';
 
 const mapStateToProps = (state) => ({
-    list:,
+    list: state.todos,
 });
 
 // they need to be curried....
