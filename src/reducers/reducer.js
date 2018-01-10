@@ -2,6 +2,7 @@ import { ADD_TODO, DELETE_TODO, TOGGLE_TODO, CHANGE_INPUT } from '../actions/act
 import initialState from './initialState';
 
 const reducer = (state = initialState(), action) => {
+    console.log(action);
     switch(action.type){
         case ADD_TODO:
             return {
@@ -14,7 +15,7 @@ const reducer = (state = initialState(), action) => {
         case DELETE_TODO:
             return {
                 ...state,
-                todos: [...state.todos.slice(0, action.index), ...state.todos(action.index + 1)],
+                todos: [...state.todos.slice(0, action.index), ...state.todos.slice(action.index + 1)],
             };
         case TOGGLE_TODO:
             return {
@@ -24,7 +25,7 @@ const reducer = (state = initialState(), action) => {
                     name: state.todos[action.index].name,
                     toggle: true,
                 }, 
-                ...state.todos(action.index + 1)],
+                ...state.todos.slice(action.index + 1)],
             };
         case CHANGE_INPUT:
             return {

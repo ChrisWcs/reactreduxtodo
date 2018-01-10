@@ -8,10 +8,13 @@ const mapStateToProps = (state) => ({
     list: state.todos,
 });
 
-// they need to be curried....
 const mapDispatchToProps = (dispatch) => ({
-    deleteFunc:,
-    toggleFunc:,
+    deleteFunc: (index) => () => {
+        dispatch(createDeleteTodo(index));
+    },
+    toggleFunc: (index) => () => {
+        dispatch(createToggleTodo(index));
+    },
 });
 
 const ConTodos = connect(mapStateToProps, mapDispatchToProps)(Todos);
